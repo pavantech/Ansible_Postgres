@@ -1,3 +1,4 @@
-- hosts: postgres
-  roles:
+#- hosts: postgres
+ - hosts: localhost
+   roles:
     - postgres-sql
