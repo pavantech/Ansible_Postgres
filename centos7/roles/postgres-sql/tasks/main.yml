@@ -25,7 +25,6 @@
     state: latest
 
   notify:
-        - start postgresql
-  notify:
+       - start postgresql
        - enable postgresql
 
