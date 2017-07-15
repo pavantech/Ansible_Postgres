@@ -1,15 +1,5 @@
 #- hosts: postgres
  - hosts: localhost
-#   roles:
-#    - postgres-sql
-   tasks:
-   #  - name: checkout repo
-   #    shell:  psql -d template1 -c "CREATE DATABASE sonarqube;"
-   #    become: yes
-   #    become_user: postgres
-     - name: changing file
-       lineinfile:
-        path: /opt/sonarqube/conf/sonar.properties
-        regexp: '#sonar.jdbc.username='
-        line: 'sonar.jdbc.username=sonar'
-        mode: 0644
+   roles:
+     - {role: postgres-sql, become: true}
+ 
