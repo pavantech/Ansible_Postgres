@@ -27,4 +27,9 @@
   notify:
        - start postgresql
        - enable postgresql
+- name: change user password postgres
+  shell:  psql -d template1 -c "ALTER USER postgres PASSWORD 'postgres';"
+  become: yes
+  become_user: postgres
+  ignore_errors: true
 
