@@ -25,9 +25,6 @@
     name: git
     state: latest
 
-  #notify:
-  #     - start postgresql
-  #     - enable postgresql
 - name: service start
   shell: systemctl start  postgresql.service
 - name: service enable
