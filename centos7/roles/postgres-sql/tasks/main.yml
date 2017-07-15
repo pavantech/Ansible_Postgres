@@ -1,3 +1,4 @@
+
 - name: install postgres latest using yum
   yum:
     name: postgresql-server
@@ -31,7 +32,11 @@
   shell: systemctl start  postgresql.service
 - name: service enable
   shell: systemctl enable  postgresql.service
-
+- name: checking started jenkins
+  shell: systemctl status postgresql
+  register: message
+- debug:
+      var: message
 - name: change user password postgres
   shell:  psql -d template1 -c "ALTER USER postgres PASSWORD 'postgres';"
   become: yes
